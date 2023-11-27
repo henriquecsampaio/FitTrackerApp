@@ -1,0 +1,23 @@
+extends layout
+
+block content
+  if errors 
+    each error in errors 
+      p(style="color:red") #{error.msg}
+  h1 Add Activity
+  form(method="POST", action="/activities/add")
+    label Activity Type: 
+    for activityType in types
+        input(name="activityType", type="radio", value=activityType)
+        label=activityType
+    br
+    label Duration: 
+    input(name="duration", type="number")
+    br
+    label Calorie loss: 
+    input(name="calorieLoss", type="number")
+    br
+    label Date: 
+    input(name="date", type="date")
+    br
+    input(value="Add", type="Submit")

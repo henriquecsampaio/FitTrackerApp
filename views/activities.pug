@@ -1,0 +1,22 @@
+extends layout
+
+block content
+  h1= title
+  p Welcome to #{title}
+  for activity in activities
+    div(style="border:solid 1px black;padding:10px;margin:5px")
+      label Type: 
+      label=activity.type
+      br
+      label Duration: 
+      label=activity.duration
+      br
+      label Calorie Loss: 
+      label=activity.calorieLoss
+      br
+      label Date: 
+      label=activity.date
+      br
+      a(href="/activities/edit/"+ activity._id) Edit
+      br
+      a(href="/activities/delete/" + activity._id) Delete

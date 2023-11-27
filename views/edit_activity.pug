@@ -1,0 +1,26 @@
+extends layout
+
+block content
+  if errors 
+    each error in errors 
+      p(style="color:red") #{error.msg}
+  h1 Edit Activity
+  form(method="POST", action="/activities/edit/" + activity._id)
+    label Activity Type: 
+    for activityType in types
+        if activity.type.includes(activityType)
+            input(name="activityType", type="radio", value=activityType, checked=true)
+        else
+            input(name="activityType", type="radio", value=activityType)
+        label=activityType
+    br
+    label Duration: 
+    input(name="duration", type="number", value=activity.duration)
+    br
+    label Calorie loss: 
+    input(name="calorieLoss", type="number", value=activity.calorieLoss)
+    br
+    label Date: 
+    input(name="date", type="date", value=activity.date)
+    br
+    input(value="Add", type="Submit")
