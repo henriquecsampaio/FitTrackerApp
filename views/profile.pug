@@ -1,0 +1,48 @@
+extends layout
+
+block content
+    if errors
+        each error in errors 
+            p(style="color:red") #{error.msg}
+    h1 Profile 
+    form(method="POST", action="/profile/update")
+        label Age: 
+        input(name="age", type="number", required)
+        br
+        br
+        label Date of Birth: 
+        input(name="birth", type="date", required)
+        br
+        br
+        label Weight:
+        input(name="weight", type="number", required)
+        br
+        br
+        label Height:
+        input(name="height", type="number", required)
+        br
+        br
+        label Goals:
+        input(name="goals", type="text", required)
+        br
+        br
+        input(value="Update", type="Submit")
+        br
+    if profile
+        for profile in profiles
+            div(style="border:solid 1px black;padding:10px;margin:5px")
+                label User:
+                label=user.name 
+                br
+                label Weight: 
+                label=profile.weight
+                br
+                label Height: 
+                label=profile.height
+                br
+                label Goals: 
+                label=profile.goals
+                br
+
+
+
