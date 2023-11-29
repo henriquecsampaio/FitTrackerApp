@@ -6,6 +6,14 @@ const profileSchema = mongoose.Schema({
         ref: 'User',
         required: true,
     },
+    age:{
+        type: Number,
+        required: true,
+    },
+    birth:{
+        type: Date,
+        default: Date.now,
+    },
     weight:{
         type: Number,
         required: true,
