@@ -21,7 +21,7 @@ router
         user
           .save()
           .then(() => {
-            res.redirect("/users/login");
+            res.redirect("/users/login")
           })
           .catch((error) => {
             console.log(error);

@@ -1,27 +1,35 @@
 extends layout
-block content
 
-    h1 Profile 
-    if profile
-        div(style="border:solid 1px black;padding:10px;margin:5px") 
-            label User:
-            label=user.name 
-            br
-            label Age: 
-            label=profile.age
-            br
-            label Date of Birth: 
-            label=profile.birth
-            br
-            label Weight: 
-            label=profile.weight
-            br
-            label Height: 
-            label=profile.height
-            br
-            label Goals: 
-            label=profile.goals
-            br
-    else
-        p No profile found.
-    a(href="/profile/update") Update profile
+block content
+  .container
+    .row
+      .col-md-8.offset-md-2
+        h1.text-center.mt-5 Profile
+        if profile
+          .card
+            .card-body
+              p.card-title.mb-3 
+                strong User: 
+                | #{user.name}
+              p.card-text 
+                strong Age: 
+                | #{profile.age}
+              p.card-text 
+                strong Date of Birth: 
+                | #{profile.birth}
+              p.card-text 
+                strong Weight: 
+                | #{profile.weight}
+              p.card-text 
+                strong Height: 
+                | #{profile.height}
+              p.card-text 
+                strong Goals: 
+                | #{profile.goals}
+        else
+          p No profile found.
+
+        .text-center.mt-4
+          a.btn.btn-primary(href="/profile/update") Update profile
+
+

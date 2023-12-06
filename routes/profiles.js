@@ -2,6 +2,7 @@ var express = require("express");
 var router = express.Router();
 let Profile = require("../models/profile");
 const { body, validationResult } = require("express-validator");
+const user = require("../models/user");
 
 function isAuthenticated(req, res, next) {
   if (req.isAuthenticated()) {
