@@ -83,36 +83,4 @@ router
     }
   });
 
-// router
-//     .route("/edit/:id")
-//     .get(function (req, res) {
-//         var id = req.params.id;
-//         Profile.findById(id).then((foundProfile) => {
-//             if (foundProfile.user.equals(req.user._id)) {
-//                 res.render("profile_edit", {
-//                     profile: foundProfile,
-//                 });
-//             } else {
-//                 res.redirect("/profile/home");
-//             }
-//         });
-//     })
-//     .post((req, res) => {
-//         let updatedProfile = {
-//             age: req.body.age,
-//             birth: req.body.birth,
-//             weight: req.body.weight,
-//             height: req.body.height,
-//             goals: req.body.goals,
-//         };
-//         Profile.updateOne({ _id: req.params.id }, updatedProfile)
-//             .then(() => {
-//                 res.redirect("/profile/home");
-//             })
-//             .catch((err) => {
-//                 console.log(err);
-//                 return;
-//             });
-//     });
-
 module.exports = router;

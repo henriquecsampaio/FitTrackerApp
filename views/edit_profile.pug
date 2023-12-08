@@ -19,11 +19,11 @@ block content
 
           .form-group.mb-3
             label(for='weight') Weight (kg):
-            input#weight.form-control.mt-2(name="weight", type="number", value=profile ? profile.weight : '')
+            input#weight.form-control.mt-2(name="weight", type="number", step="0.01", value=profile ? profile.weight : '')
 
           .form-group.mb-3
             label(for='height') Height (cm):
-            input#height.form-control.mt-2(name="height", type="number", value=profile ? profile.height : '')
+            input#height.form-control.mt-2(name="height", type="number", step="0.01", value=profile ? profile.height : '')
 
           .form-group.mb-3
             label(for='goals') Goals:
